@@ -1,4 +1,4 @@
-package com.example.chapter6_topic1
+package com.example.chapter6_topic1.latihan
 
 import android.app.Application
 import android.content.ContentResolver
@@ -9,7 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.work.Data
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import com.example.chapter6_topic1.latihan.BlurViewModel
+import com.example.chapter6_topic1.BlurViewModel
+import com.example.chapter6_topic1.R
 import com.example.chapter6_topic1.latihan.workers.BlurWorker
 import com.example.chapter6_topic1.workers.KEY_IMAGE_URI
 
