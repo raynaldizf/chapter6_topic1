@@ -13,7 +13,6 @@ import android.renderscript.ScriptIntrinsicBlur
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.chapter6_topic1.R
-import com.example.chapter6_topic1.workers.OUTPUT_PATH
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -25,11 +24,11 @@ fun makeStatusNotification(message: String, context: Context) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
-        val name = com.example.chapter6_topic1.workers.VERBOSE_NOTIFICATION_CHANNEL_NAME
+        val name = VERBOSE_NOTIFICATION_CHANNEL_NAME
         val description =
-            com.example.chapter6_topic1.workers.VERBOSE_NOTIFICATION_CHANNEL_DESCRIPTION
+            VERBOSE_NOTIFICATION_CHANNEL_DESCRIPTION
         val importance = NotificationManager.IMPORTANCE_HIGH
-        val channel = NotificationChannel(com.example.chapter6_topic1.workers.CHANNEL_ID, name, importance)
+        val channel = NotificationChannel(CHANNEL_ID, name, importance)
         channel.description = description
 
         // Add the channel
@@ -41,16 +40,16 @@ fun makeStatusNotification(message: String, context: Context) {
 
     // Create the notification
     val builder = NotificationCompat.Builder(context,
-        com.example.chapter6_topic1.workers.CHANNEL_ID
+        CHANNEL_ID
     )
         .setSmallIcon(R.drawable.ic_launcher_foreground)
-        .setContentTitle(com.example.chapter6_topic1.workers.NOTIFICATION_TITLE)
+        .setContentTitle(NOTIFICATION_TITLE)
         .setContentText(message)
         .setPriority(NotificationCompat.PRIORITY_HIGH)
         .setVibrate(LongArray(0))
 
     // Show the notification
-    NotificationManagerCompat.from(context).notify(com.example.chapter6_topic1.workers.NOTIFICATION_ID, builder.build())
+    NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, builder.build())
 }
 
 fun blurBitmap(bitmap: Bitmap, applicationContext: Context): Bitmap {

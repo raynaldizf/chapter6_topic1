@@ -9,10 +9,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.work.Data
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import com.example.chapter6_topic1.BlurViewModel
 import com.example.chapter6_topic1.R
 import com.example.chapter6_topic1.latihan.workers.BlurWorker
-import com.example.chapter6_topic1.workers.KEY_IMAGE_URI
+import com.example.chapter6_topic1.latihan.workers.KEY_IMAGE_URI
 
 class BlurViewModel(application : Application): ViewModel() {
 
